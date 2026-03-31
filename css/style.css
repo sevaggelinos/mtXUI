@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+pre {
+  background: #222;
+  color: #0f0;
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 6px;
+}
+
+.table-wrapper {
+  width: 100%;       /* Stay within the card width */
+  overflow-x: auto;  /* Add a scrollbar if the table is too wide */
+}
+
+table {
+  table-layout: fixed; /* Forces columns to respect the width you give them */
+  width: 100%;
+  word-wrap: break-word; /* Prevents long text from breaking the layout */
+}
+
+th {
+  background: #333;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+th button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: #106c41;
+}
+
+th button:hover {
+  color: #e10d0d;
+}
