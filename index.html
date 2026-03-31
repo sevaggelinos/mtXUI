@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Boot UI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>MTX Spring Boot Client</h1>
+    <section class="card">
+      <h2>Main Menu</h2>
+        <button onclick="showManufacturers();">Manufacturers</button>
+        <button onclick="showModels();">Models</button>
+        <button onclick="showPrices();">Prices</button>
+        <button onclick="showPayments();">Payments</button>
+    </section>
+
+    <section class="card" id="ManufacturerCard">
+      <section class="card">
+        <h2>Create Manufacturer</h2>
+        <form id="ManufacturerForm">
+          <label for="manufacturerName">Manufacturer</label>
+          <input type="text" id="manufacturerName" name="manufacturerName" required />
+          <label for="advancePaymentPercentage">Advance payment %</label>
+          <input type="number" id="advancePaymentPercentage" name="advancePaymentPercentage" min="0" max="1" step="0.05" value="0" required />
+          <label for="pctOfInstallment">Installment % (yearly)</label>
+          <input type="number"  id="pctOfInstallment" name="pctOfInstallment" min="0" max="1" step="0.01" value="0" required />
+          <label for="numberOfInstallments">Number of Installments</label>
+          <input type="number" id="numberOfInstallments" name="numberOfInstallments" min="0" max="72" step="1" value="0" required />
+
+          <button type="submit">Create</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Manufacturers</h2>
+        <table id="manufacturersTable" border="1" cellpadding="10">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Manufacturer</th>
+              <th>Advance payment %</th>
+              <th>Installment % (yearly)</th>
+              <th>Number of Installments</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS will insert rows here -->
+          </tbody>
+        </table>
+        <pre id="manresult"></pre>
+      </section>
+    </section>
+
+    <section class="card" id="ModelCard">
+      <section class="card">
+        <h2>Create Model</h2>
+        <form id="ModelForm">
+          <label for="ModelName">Model</label>
+          <input type="text" id="ModelName" name="ModelName" required />
+          <label for="ModelURL">Model URL</label>
+          <input type="url" id="ModelURL" name="ModelURL" required />
+          <label for="manIDforModel">Manufacturer</label>
+          <select id="manIDforModel" required>
+            <option value="">-- Select Manufacturer --</option>
+          </select>
+          <button type="submit">Create</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Models</h2>
+        <table id="modelsTable" border="1" cellpadding="10">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Model</th>
+              <th>Model URL</th>
+              <th>Manufacturer</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS will insert rows here -->
+          </tbody>
+        </table>
+        <pre id="modresult"></pre>
+      </section>
+    </section>
+
+    <section class="card" id="PriceCard">
+      <section class="card">
+        <h2>Add Price</h2>
+        <form id="PriceForm">
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" required />
+          <label for="activationDate">Date</label>
+          <input type="date" id="activationDate" name="activationDate" required />
+          <label for="modIDforPrice">Model</label>
+          <select id="modIDforPrice" required>
+            <option value="">-- Select Model --</option>
+          </select>
+          <button type="submit">Create</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Models</h2>
+        <table id="priceTable" border="1" cellpadding="10">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Price</th>
+              <th>Activation Date</th>
+              <th>DeActivation Date</th>
+              <th>Model</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS will insert rows here -->
+          </tbody>
+        </table>
+        <pre id="prcresult"></pre>
+      </section>
+    </section>
+
+    <section class="card" id="PriceAnalysisCard">
+      <section class="card">
+        <h2>Payments</h2>
+        <table id="paymentTable" border="1" cellpadding="10">
+          <thead>
+            <tr>
+              <th>Manufacturer <button onclick="sortBy('manufacturerName')">↕</button></th>
+              <th>Model <button onclick="sortBy('modelName')">↕</button></th>
+              <th>Advance % <button onclick="sortBy('advancePaymentPercentage')">↕</button></th>
+              <th>Installment % <button onclick="sortBy('pctOfInstallment')">↕</button></th>
+              <th>Installments <button onclick="sortBy('numberOfInstallments')">↕</button></th>
+              <th>Price <button onclick="sortBy('price')">↕</button></th>
+              <th>Extra <button onclick="sortBy('extraCost')">↕</button></th>
+              <th>Remaining <button onclick="sortBy('remainingPaymentAmount')">↕</button></th>
+              <th>Advance Amt <button onclick="sortBy('advancePaymentAmount')">↕</button></th>
+              <th>Monthly Amt <button onclick="sortBy('monthlyPaymentAmount')">↕</button></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS will insert rows here -->
+          </tbody>
+        </table>
+        <pre id="payresult"></pre>
+      </section>
+    </section>
+
+    <section class="card">
+        <pre id="result"></pre>
+    </section>
+
+  </div>
+
+  <script src="js/mtxui.js"></script>
+</body>
+</html>
