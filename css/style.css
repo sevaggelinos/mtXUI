@@ -86,3 +86,45 @@ th button {
 th button:hover {
   color: #e10d0d;
 }
+
+/* Layout to keep text and button side-by-side */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.sort-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* The Icon Base */
+.sort-icon {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* Arrow Up (Ascending) */
+.sort-icon.asc {
+  border-bottom: 8px solid #333;
+  border-top: none;
+}
+
+/* Arrow Down (Descending) */
+.sort-icon.desc {
+  border-top: 8px solid #333;
+  border-bottom: none;
+}
