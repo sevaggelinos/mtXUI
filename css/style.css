@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: #0a0e27;
+  color: #e0e6ff;
   margin: 0;
   padding: 0;
 }
@@ -12,41 +13,67 @@ body {
 }
 
 .card {
-  background: white;
+  background: #1a1f3a;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #00bfff;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.15);
 }
 
 h1, h2 {
   margin-top: 0;
+  color: #00d9ff;
 }
 
 label {
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
+  color: #b0d4ff;
 }
 
 input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  background: #0f1428;
+  border: 1px solid #00bfff;
+  color: #e0e6ff;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00d9ff;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.3);
 }
 
 button {
   margin-top: 15px;
   padding: 10px 16px;
   cursor: pointer;
+  background: #00bfff;
+  color: #0a0e27;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00d9ff;
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 pre {
-  background: #222;
-  color: #0f0;
+  background: #050a1a;
+  color: #00ff88;
   padding: 15px;
   overflow-x: auto;
   border-radius: 6px;
+  border-left: 3px solid #00bfff;
 }
 
 .table-wrapper {
@@ -60,18 +87,23 @@ table {
   word-wrap: break-word; /* Prevents long text from breaking the layout */
 }
 
-th {
-  background: #333;
-  color: white;
+th {0f1428;
+  color: #00d9ff;
+  border-bottom: 2px solid #00bfff;
 }
 
 td, th {
   padding: 10px;
   text-align: left;
+  color: #e0e6ff;
 }
 
 tr:nth-child(even) {
-  background: #f2f2f2;
+  background: #151d36;
+}
+
+tr:nth-child(odd) {
+  background: #1a1f3a;
 }
 
 th button {
@@ -80,10 +112,12 @@ th button {
   cursor: pointer;
   font-size: 0.8em;
   margin-left: 5px;
-  color: #106c41;
+  color: #00bfff;
+  transition: color 0.2s ease;
 }
 
 th button:hover {
+  color: #00ff88{
   color: #e10d0d;
 }
 
@@ -96,17 +130,18 @@ th button:hover {
 
 .sort-button {
   background: none;
-  border: 1px solid #ccc;
+  border: 1px solid #00bfff;
   border-radius: 4px;
   cursor: pointer;
   padding: 4px;
   display: flex;
   align-items: center;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .sort-button:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(0, 191, 255, 0.1);
+  border-color: #00d9ff;
 }
 
 /* The Icon Base */
@@ -119,12 +154,12 @@ th button:hover {
 
 /* Arrow Up (Ascending) */
 .sort-icon.asc {
-  border-bottom: 8px solid #333;
+  border-bottom: 8px solid #00bfff;
   border-top: none;
 }
 
 /* Arrow Down (Descending) */
 .sort-icon.desc {
-  border-top: 8px solid #333;
+  border-top: 8px solid #00bfff;
   border-bottom: none;
 }
